@@ -3,9 +3,13 @@ import numpy as np
 from tkinter import Tk, Button
 
 def check_image():
-    screenshot = cv2.imread('screenshot.png') # To be determined
-    template = cv2.imread('reference_image.png') # To be determiend
-    template2 = cv2.imread('reference_image2.png') # To be determined
+    screenshot = cv2.imread('Screenshot.png')
+    screenshot2 = cv2.imread('Failed.png')
+    screenshot3 = cv2.imread('Quit.png')
+    template = cv2.imread('TapScreen.png')
+    template2 = cv2.imread('NextQuest.png')
+    template3 = cv2.imread('Home.png')
+    template4 = cv2.imread('Ok.png')
     result = cv2.matchTemplate(screenshot, template, cv2.TM_CCOEFF_NORMED)
     result2 = cv2.matchTemplate(screenshot, template, cv2.TM_CCOEFF_NORMED)
 
