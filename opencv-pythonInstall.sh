@@ -1,3 +1,5 @@
+#!/bin/bash
+
 check_package() {
 	dpkg -1 | grep -q "opencv-python"
 }
