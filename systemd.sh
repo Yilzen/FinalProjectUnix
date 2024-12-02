@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "[Unit]
-Description=Install dependencies (OpenCV, xdotool, Steam) on boot
+Description=Install dependencies (OpenCV, xdotool, Steam, scrot) on boot
 After=network.target
 
 [Service]
@@ -12,7 +12,5 @@ RemainAfterExit=true
 WantedBy=multi-user.target" > /etc/systemd/system/install_packages.service
 
 sudo systemctl enable install_packages.service
-
 sudo systemctl status install_packages.service
-
 sudo reboot

@@ -27,3 +27,13 @@ if ! python3 -c "import cv2" &> /dev/null; then
 else
     echo "opencv-python is already installed."
 fi
+
+if ! dpkg -l | grep -q scrot; then
+    sudo apt install -y scrot
+else
+    echo "scrot is already installed."
+fi
+
+scrot '/path/to/Screenshot.png'
+
+echo "Script execution completed."
