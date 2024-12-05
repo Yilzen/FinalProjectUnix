@@ -8,6 +8,12 @@ else
     echo "xdotool is already installed."
 fi
 
+if ! dpkg -1 | grep -q xbindkeys; then
+     sudo apt install -y xbindkeys
+else
+    echo "xbindkeys is already installed."
+fi
+
 if ! dpkg -l | grep -q steam-installer; then
      sudo dpkg --add-architecture i386
      sudo apt update

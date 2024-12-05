@@ -12,5 +12,6 @@ RemainAfterExit=true
 WantedBy=multi-user.target" > /etc/systemd/system/install_packages.service
 
 sudo systemctl enable install_packages.service
+sudo systemctl start install_packages.service
 sudo systemctl status install_packages.service
 sudo reboot
