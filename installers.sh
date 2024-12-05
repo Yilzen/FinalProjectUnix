@@ -9,7 +9,13 @@ else
 fi
 
 if ! dpkg -l | grep -q steam-installer; then
-    sudo apt install -y steam-installer
+     sudo dpkg --add-architecture i386
+     sudo apt update
+     sudo apt install wget
+     wget wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
+     sudo dpkg -i steam.deb
+     sudo apt install -f
+     steam --version
 else
     echo "Steam is already installed."
 fi
