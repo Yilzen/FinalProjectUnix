@@ -37,12 +37,13 @@ else:
     fi
 }
 
-# Check if F8 is pressed to start the script
+# Loop to wait for F8 press
 while true; do
-    # Capture if F8 is pressed and run the loop
+    # Check if F8 is pressed
     if xdotool key --clearmodifiers F8; then
         echo "F8 pressed, starting script..."
 
+        # Run your script logic
         take_screenshot "Screenshot"
         search_and_click "Screenshot" "PrepareQuest"
         sleep 4
