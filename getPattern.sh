@@ -51,10 +51,11 @@ while true; do
 
     take_screenshot "Screenshot"
     search_and_click "Screenshot" "TapScreen"
-    if [$? -eq 0 ]; then
+    if [ $? -eq 0 ]; then
     sleep 5
     take_screenshot "Screenshot"
     search_and_click "Screenshot" "NextQuest"
+    fi
     if [ $? -eq 0 ]; then
         sleep 4
         echo "Restarting script"
