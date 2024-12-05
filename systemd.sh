@@ -1,11 +1,11 @@
 #!/bin/bash
 echo "[Unit]
-Description=Install dependencies (OpenCV, xdotool, Steam, scrot) on boot
+Description=Install dependencies (OpenCV, xdotool, Steam, scrot, python3, pip, xbindkeys) on boot
 After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/installers.sh
+ExecStart=/home/usr/FinalProjectUnix/installers.sh
 RemainAfterExit=true
 
 [Install]
