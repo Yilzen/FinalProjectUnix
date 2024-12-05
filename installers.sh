@@ -29,7 +29,7 @@ if ! dpkg -l | grep -q python3-pip; then
 fi
 
 if ! python3 -c "import cv2" &> /dev/null; then
-    sudo apt install -y opencv-python
+    sudo apt install -y python3-opencv
 else
     echo "opencv-python is already installed."
 fi
