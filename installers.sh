@@ -8,6 +8,11 @@ else
     echo "xdotool is already installed."
 fi
 
+if ! dpkg -1 | grep -q xbindkeys; then
+     sudo apt install -y xbindkeys
+else
+    echo "xbindkeys is already installed."
+
 if ! dpkg -l | grep -q steam-installer; then
      sudo dpkg --add-architecture i386
      sudo apt update
@@ -40,6 +45,6 @@ else
     echo "scrot is already installed."
 fi
 
-scrot '/path/to/Screenshot.png'
+scrot '/usr/local/bin/FinalProjectUnix/images/Screenshot.png'
 
 echo "Script execution completed."
