@@ -37,50 +37,56 @@ else:
     fi
 }
 
+# Loop to wait for F8 press
 while true; do
-    take_screenshot "Screenshot"
-    search_and_click "Screenshot" "PrepareQuest"
-    sleep 4
+    # Check if F8 is pressed
+    if xdotool key --clearmodifiers F8; then
+        echo "F8 pressed, starting script..."
 
-    take_screenshot "Screenshot"
-    search_and_click "Screenshot" "StartQuest"
-    sleep 4
-
-    echo "Waiting for 3 minutes..."
-    sleep 180
-
-    take_screenshot "Screenshot"
-    search_and_click "Screenshot" "TapScreen"
-    if [ $? -eq 0 ]; then
-    sleep 5
-    take_screenshot "Screenshot"
-    search_and_click "Screenshot" "NextQuest"
-    fi
-    if [ $? -eq 0 ]; then
-        sleep 4
-        echo "Restarting script"
-        continue
-    fi
-
-    take_screenshot "Screenshot"
-    search_and_click "Screenshot" "Failed"
-    if [ $? -eq 0 ]; then
+        # Run your script logic
+        take_screenshot "Screenshot"
+        search_and_click "Screenshot" "PrepareQuest"
         sleep 4
         take_screenshot "Screenshot"
-        search_and_click "Screenshot" "QuitButton"
+        search_and_click "Screenshot" "StartQuest"
         sleep 4
-	take_screenshot "Screenshot"
-	search_and_click "Screenshot" "Quit"
-	sleep 4
-        take_screenshot "Screenshot"
-        search_and_click "Screenshot" "Ok"
-	sleep 4
+
+        echo "Waiting for 3 minutes..."
+        sleep 180
+
         take_screenshot "Screenshot"
         search_and_click "Screenshot" "TapScreen"
-	sleep 4
-	take_screenshot "Screenshot"
-	search_and_click "Screenshot" "Home"
-	sleep 4
-   fi
-   sleep 1
+        if [ $? -eq 0 ]; then
+            sleep 5
+            take_screenshot "Screenshot"
+            search_and_click "Screenshot" "NextQuest"
+        fi
+        if [ $? -eq 0 ]; then
+            sleep 4
+            echo "Restarting script"
+            continue
+        fi
+
+        take_screenshot "Screenshot"
+        search_and_click "Screenshot" "Failed"
+        if [ $? -eq 0 ]; then
+            sleep 4
+            take_screenshot "Screenshot"
+            search_and_click "Screenshot" "QuitButton"
+            sleep 4
+            take_screenshot "Screenshot"
+            search_and_click "Screenshot" "Quit"
+            sleep 4
+            take_screenshot "Screenshot"
+            search_and_click "Screenshot" "Ok"
+            sleep 4
+            take_screenshot "Screenshot"
+            search_and_click "Screenshot" "TapScreen"
+            sleep 4
+            take_screenshot "Screenshot"
+            search_and_click "Screenshot" "Home"
+            sleep 4
+        fi
+        sleep 1
+    fi
 done
