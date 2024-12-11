@@ -12,6 +12,10 @@ if ! dpkg -1 | grep -q xbindkeys; then
      sudo apt install -y xbindkeys
 else
     echo "xbindkeys is already installed."
+<<<<<<< HEAD
+=======
+fi
+>>>>>>> 0ae5c1fe74a0528e483d3d1db84b10c43d42f7e7
 
 if ! dpkg -l | grep -q steam-installer; then
      sudo dpkg --add-architecture i386
