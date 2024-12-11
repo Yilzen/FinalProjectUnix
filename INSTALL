@@ -1,0 +1,19 @@
+use sudo apt install in console to get the packages
+-xdotool
+-xbindkeys
+-python3
+-python3-pip
+-python3-opencv
+-scrot
+
+for steam, it's more complicated and you need to use the following:
+sudo apt update
+sudo apt install wget
+wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
+sudo dpkg -i steam.deb
+sudo apt install -f
+steam --version
+
+you also need to have a steam account to have access to the game Bleach: Brave Souls
+
+That will be all.
